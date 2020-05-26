@@ -1,2 +1,6 @@
-@import 'body.scss';
-@import 'App.css';
+@import 'variables';
+@import 'mixins';
+@import 'reset';
+@import 'body';
+@import 'App';
+@import 'keyframes';
