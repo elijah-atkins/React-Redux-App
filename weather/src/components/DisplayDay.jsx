@@ -1,5 +1,6 @@
 import React from "react";
-
+import { getFehrenheit } from '../store/functions/getFehrenheit';
+import GetWeatherIcon from './GetWeatherIcon';
 
 export const DisplayDay = ({ weather }) => {
     console.log(weather)
@@ -9,7 +10,7 @@ export const DisplayDay = ({ weather }) => {
         <p>{weather.weather_state_name}</p>
       </div>
       <div className="TEMP-REACT-SVG-SWITCH">
-        ICON={weather.weather_state_abbr}
+        <GetWeatherIcon abbr={weather.weather_state_abbr} />
       </div>
       <div className="wind">
         <p>Wind</p>
@@ -17,7 +18,7 @@ export const DisplayDay = ({ weather }) => {
 
       <div className="weather-temp">
         <h1>
-          {weather.the_temp}
+          {Math.round(getFehrenheit(weather.the_temp))}
           {"\u00b0"}
         </h1>
         <div className="temp-toggle-button">F/C</div>
@@ -29,11 +30,11 @@ export const DisplayDay = ({ weather }) => {
       </div>
       <div className="weather-low-high">
         <h1>
-          {weather.min_temp}
+          {Math.round(getFehrenheit(weather.min_temp))}
           {"\u00b0"}
         </h1>
         <h1>
-          {weather.max_temp}
+          {Math.round(getFehrenheit(weather.max_temp))}
           {"\u00b0"}
         </h1>
       </div>

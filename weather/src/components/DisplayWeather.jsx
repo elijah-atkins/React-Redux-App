@@ -1,16 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import DisplayDay from './DisplayDay';
+import { formatTime } from '../store/functions/formatTime';
 
 const DisplayWeather = props => {
     console.log(props)
+    const sunRise = new Date(props.sun_rise)
+    const sunSet = new Date(props.sun_set);
+
     return(
         <div className="display-weather">
             <div className="location">
                 <h1>{props.title}</h1>
                 <div className="sunset-sunrise">
-                    <p>Sunrise: {props.sun_rise}</p>
-                    <p>Sunset: {props.sun_set}</p>
+                    <p>Sunrise: {formatTime(sunRise)}</p>
+                    <p>Sunset: {formatTime(sunSet)}</p>
                 </div>
             </div>
             {props.consolidated_weather.map(day =>{

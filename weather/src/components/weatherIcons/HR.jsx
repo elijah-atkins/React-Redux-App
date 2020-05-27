@@ -1,4 +1,4 @@
-import { ReactComponent as HeavyRain } from '../store/svgSource/hr.svg';
+import { ReactComponent as SVGhr } from '../../store/svgSource/hr.svg';
 import styled, { keyframes } from 'styled-components'
 
 const fall = keyframes`
@@ -10,9 +10,7 @@ const fall = keyframes`
   }
 `;
 
-const Rain = styled(HeavyRain)`
-    height:25rem;
-    width:25rem;
+const HR = styled(SVGhr)`
     display:block;
     margin:auto;
     color: #36d;
@@ -27,4 +25,4 @@ const Rain = styled(HeavyRain)`
     }
 `
 
-export default Rain
+export default HR
