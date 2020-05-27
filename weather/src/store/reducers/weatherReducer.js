@@ -8,8 +8,8 @@ const initialState = {
   consolidated_weather: [
     {
       id: 6126943885852672,
-      weather_state_name: "Light Cloud",
-      weather_state_abbr: "lc",
+      weather_state_name: "Light Rain",
+      weather_state_abbr: "lr",
       wind_direction_compass: "NE",
       created: "2020-05-27T00:53:37.471109Z",
       applicable_date: "2020-05-26",
