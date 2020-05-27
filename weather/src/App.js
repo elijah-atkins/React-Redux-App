@@ -2,25 +2,16 @@ import React, { Component } from 'react';
 //import actions
 import Rain from './components/Rain';
 //import components
-import LocationSearch from './components/LocationSearch'
+import LocationSearch from './components/LocationSearch';
+import DisplayWeather from './components/DisplayWeather';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-<Rain />
+        <Rain />
         <LocationSearch />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <DisplayWeather />
       </header>
     </div>
   );

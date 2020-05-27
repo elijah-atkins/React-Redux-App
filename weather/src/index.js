@@ -5,17 +5,20 @@ import logger from "redux-logger";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 //import reducer
+import rootReducer from './store/reducers';
 import "./scss/index.scss";
 import App from "./App";
 
 //create store with reducer
-//const store = createStore(null, applyMiddleware(thunk, logger))
+const store = createStore(rootReducer, applyMiddleware(thunk, logger));
 
 ReactDOM.render(
-//wrap app with Provider tag
-    <React.StrictMode>
+  //wrap app with Provider tag
+  <React.StrictMode>
+    <Provider store={store}>
       <App />
-    </React.StrictMode>,
+    </Provider>
+  </React.StrictMode>,
 
   document.getElementById("root")
 );

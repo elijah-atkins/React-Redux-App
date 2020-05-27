@@ -16,8 +16,15 @@ const Rain = styled(HeavyRain)`
     width:25rem;
     display:block;
     margin:auto;
+    color: #36d;
     .hr-rain{
-        animation: ${fall} infinite 1s linear;
+        animation: ${fall} infinite 600ms linear;
+    }
+    .hr-cloud{
+      color: #ddd;
+      &:hover{
+        color: #fff;
+      }
     }
 `
 

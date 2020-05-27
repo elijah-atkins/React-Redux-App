@@ -1,12 +1,26 @@
 import React from 'react';
 
-const LocationSearch = () =>{
+
+const LocationSearch = props =>{
+    console.log(props)
     return(
         <div className="location-search-form">
             <form>
-                <input type="text" placeholder="Location name">
+            <input
+            className="location-input"
+            type="text"
+            name="newLocation"
+            placeholder="Enter A Location"
+            value={null}
+            onChange={null}
+          />
+          <button
+            onClick={() => {
 
-                </input>
+            }}
+          >
+            Get Weather
+          </button>
             </form>
 
         </div>
