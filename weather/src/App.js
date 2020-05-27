@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-
 //import actions
-import Logo from './components/Logo.jsx';
-
+import Rain from './components/Rain';
+//import components
+import LocationSearch from './components/LocationSearch'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Logo />
+<Rain />
+        <LocationSearch />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
