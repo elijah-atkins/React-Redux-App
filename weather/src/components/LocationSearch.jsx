@@ -1,8 +1,8 @@
 import React from 'react';
 
 
-const LocationSearch = props =>{
-    console.log(props)
+const LocationSearch = () =>{
+
     return(
         <div className="location-search-form">
             <form>
@@ -11,8 +11,8 @@ const LocationSearch = props =>{
             type="text"
             name="newLocation"
             placeholder="Enter A Location"
-            value={null}
-            onChange={null}
+            value="Colorado Springs"
+            onChange={()=> { return (null)}}
           />
           <button
             onClick={() => {

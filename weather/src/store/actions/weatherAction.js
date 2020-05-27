@@ -6,18 +6,24 @@ export const WEATHER_FETCH_ERROR = "WEATHER_FETCH_ERROR";
 // Those three types above are all a representation of our State Machine
 // fetching, resolve, reject... etc. : ) Start to notice this pattern. You'll use it constantly in redux!
 
-export const fetchWeather = (props) => {
-  const promise = axios.get(`https://www.metaweather.com/api/location/${props.woeid}`);
+export const fetchWeather = (woeid) => {
+  console.log('weatherAction: city', woeid)
+  
+  const promise = axios.get(`https://www.metaweather.com/api/location/${woeid}`);
   return dispatch => {
     dispatch({ type: FETCHING_WEATHERS }); // first state of 'fetching' is dispatched
     promise
       .then(response => {
-          
-        dispatch({ type: WEATHER_FETCH_SUCCESS, payload: response.data.message }); // 2nd state of success is dispatched IF the promise resolves
+          console.log('weatherAction: then', response.data)
+        dispatch({ type: WEATHER_FETCH_SUCCESS, payload: response.data }); // 2nd state of success is dispatched IF the promise resolves
       })
       .catch(err => {
         console.log(err);
-        dispatch({ type: WEATHER_FETCH_ERROR }); // our other 2nd state of 'rejected' will be dispatched here.
+        dispatch({ type: WEATHER_FETCH_ERROR, payload: err}); // our other 2nd state of 'rejected' will be dispatched here.
       });
   };
 };
+
+export const updateWeather = newWeather => {
+  return {};
+}

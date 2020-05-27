@@ -5,6 +5,7 @@ import {
 } from "../actions/weatherAction";
 
 const initialState = {
+  fetchingWeather: false,
   consolidated_weather: [
     {
       id: 6126943885852672,
@@ -40,21 +41,20 @@ const initialState = {
   woeid: 2383489,
   latt_long: "38.833450,-104.821808",
   timezone: "America/Denver",
+
 };
 
 export const weatherReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCHING_WEATHERS:
-      return Object.assign({}, state, { fetchingWeathers: true }); // if we're fetching simply trigger the boolean!
+      return Object.assign({}, state, { fetchingWeather: false }); // if we're fetching simply trigger the boolean!
     case WEATHER_FETCH_SUCCESS:
-      return Object.assign({}, state, {
-        consolidated_weather: [
-          ...state.consolidated_weather,
-          ...action.payload,
-        ], // if our promise was successfull, build out the weathers array.
-        title: state.title,
-        fetchingWeathers: false, // also, set our boolean to false, because we're no longer fetching
-      });
+      return {
+        ...state,
+        ...action.payload,
+        fetchingWeather: false,
+        error: ''
+      };
     case WEATHER_FETCH_ERROR:
       return Object.assign({}, state, {
         fetchingWeathers: false, // we're also no longer fetching here so set the boolean to false
