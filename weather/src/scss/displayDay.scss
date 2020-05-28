@@ -4,7 +4,21 @@
     "date date"
      "icon temp"
      "main main";
+     .weather-wind {
+
+         color: $white;
+         display: flex;
+         justify-content: flex-start;
+         p{
+            padding: 1rem;
+            background-color: $black;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+
+         }
+     }
 }
+
 .weather-date {
     grid-area: date;
 }
@@ -27,7 +41,7 @@
 .weather-main {
     display: flex;
     grid-area: main;
-    .weather-wind {
+    .weather-wind-dir {
         display:flex;
         padding: 1rem;
         h1{
@@ -38,7 +52,7 @@
         }
     }
 }
-.weather-low-high {
+.weather-low-high-big {
     display:flex;
     h1{
         font-size: 3rem;

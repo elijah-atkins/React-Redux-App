@@ -6,10 +6,11 @@ import { formatTime } from "../store/functions/formatTime";
 import { fetchWeather } from "../store/actions/weatherAction";
 
 const DisplayWeather = (props) => {
+  //console.log('DisplayWeather', props)
     const getWeather = props.fetchWeather;
   useEffect(() => {
     //call an action creator
-    getWeather("2383489");
+    getWeather(props.woeid);
   }, [getWeather]);
 
   const sunRise = new Date(props.sun_rise);
@@ -29,9 +30,11 @@ const DisplayWeather = (props) => {
       {props.consolidated_weather.slice(0, 1).map((day) => {
         return <DisplayDay weather={day} key={day.id} />;
       })}
+      <div className="five-day">
       {props.consolidated_weather.slice(1).map((day) => {
         return <DisplayFiveDay weather={day} key={day.id} />;
       })}
+      </div>
     </div>
   );
 };
@@ -44,6 +47,7 @@ const mapStateToProps = (state) => {
     title: state.weather.title,
     consolidated_weather: [...state.weather.consolidated_weather],
     fetchingWeather: state.weather.fetchingWeather,
+    woeid: state.weather.woeid,
     error: state.weather.error,
   };
 };

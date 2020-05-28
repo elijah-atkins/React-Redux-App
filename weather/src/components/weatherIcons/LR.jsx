@@ -14,7 +14,7 @@ const LR = styled(SVGlr)`
     display:block;
     margin:auto;
     .lr-rain{
-        animation: ${lrFall} infinite 600ms linear;
+        animation: ${lrFall} infinite 700ms linear;
     }
 `
 

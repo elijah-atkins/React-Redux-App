@@ -1,0 +1,19 @@
+.five-day {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    p {
+        font-size: 1.6rem
+    }
+    .weather-temp{
+        h1{
+            font-size: 2rem;
+        }
+    }
+    .weather-low-high {
+            display:flex;
+            justify-content: space-between;
+        h1{
+            font-size: 2rem;
+        }
+    }
+}

@@ -2,6 +2,7 @@ import { FETCHING_LOCATION, LOCATION_FETCH_SUCCESS, LOCATION_FETCH_ERROR } from 
 
 const initialState = { 
   woeid: "2383489", 
+  search: "",
   fetchingLocation: false, 
   error: "" };
 

@@ -8,7 +8,6 @@ export const DisplayFiveDay = ({ weather }) => {
     <div className="weather-five-day">
       <div className="weather-icon">
         <div className="weather-state-name">
-          <p>{weather.weather_state_name}</p>
         </div>
         <div className="weather-img">
           <GetWeatherIcon abbr={weather.weather_state_abbr} />

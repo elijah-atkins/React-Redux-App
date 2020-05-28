@@ -21,7 +21,7 @@ export const DisplayDay = ({ weather }) => {
       </div>
       </div>
 
-
+    <div className="weather-temp-holder">
       <div className="weather-temp">
         <h1>
           {Math.round(getFehrenheit(weather.the_temp))}
@@ -29,16 +29,7 @@ export const DisplayDay = ({ weather }) => {
         </h1>
         <div className="temp-toggle-button"><p>F</p></div>
       </div>
-      <div className="weather-main">
-      <div className="weather-wind">
-
-        <h1>{Math.round(weather.wind_speed)}</h1>
-        <div className="weather-wind-direction">
-        <h2>{weather.wind_direction_compass}</h2>
-        <p>mph</p>
-        </div>
-      </div>
-      <div className="weather-low-high">
+      <div className="weather-low-high-big">
         <h1>
           {Math.round(getFehrenheit(weather.min_temp))}
           {"\u00b0"}
@@ -48,6 +39,18 @@ export const DisplayDay = ({ weather }) => {
           {"\u00b0"}
         </h1>
       </div>
+      </div>
+
+      <div className="weather-main">
+      <div className="weather-wind-dir">
+
+        <h1>{Math.round(weather.wind_speed)}</h1>
+        <div className="weather-wind-direction">
+        <h2>{weather.wind_direction_compass}</h2>
+        <p>mph</p>
+        </div>
+      </div>
+
       </div>
       <div className="five-day"></div>
     </div>
