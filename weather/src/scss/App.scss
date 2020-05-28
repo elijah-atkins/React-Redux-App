@@ -16,7 +16,7 @@
 }
 
 .App-header {
-  background-color: $bg-color;
+  background-image: linear-gradient(lighten($bg-color, 5%), $bg-color);
   min-height: 100vh;
   min-width:100vw;
 
