@@ -9,7 +9,7 @@ export const LOCATION_FETCH_ERROR = "LOCATION_FETCH_ERROR";
 export const fetchLocation = (query) => {
 
     const promise = axios.get(
-      `https://www.metaweather.com/api/location/search/?query=${query}`
+      `https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?query=${query}`
     );
     return (dispatch) => {
       dispatch({ type: FETCHING_LOCATION }); // first state of 'fetching' is dispatched

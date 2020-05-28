@@ -51,7 +51,6 @@ export const DisplayDay = ({ weather }) => {
       </div>
 
       </div>
-      <div className="five-day"></div>
     </div>
   );
 };

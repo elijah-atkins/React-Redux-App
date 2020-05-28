@@ -34,10 +34,10 @@ const DisplayWeather = (props) => {
           <p>Sunset: {formatTime(sunSet)}</p>
         </div>
       </div>
-      {props.consolidated_weather.slice(0, 1).map((day) => {
-        return <DisplayDay weather={day} key={day.id} />;
-      })}
+     <DisplayDay weather={props.consolidated_weather[0]} key={props.consolidated_weather[0].id} />
+
       <div className="five-day">
+
       {props.consolidated_weather.slice(1).map((day) => {
         return <DisplayFiveDay weather={day} key={day.id} />;
       })}

@@ -7,12 +7,12 @@ export const WEATHER_FETCH_ERROR = "WEATHER_FETCH_ERROR";
 // fetching, resolve, reject... etc. : ) Start to notice this pattern. You'll use it constantly in redux!
 
 export const fetchWeather = (woeid) => {  
-  const promise = axios.get(`https://www.metaweather.com/api/location/${woeid}`);
+  const promise = axios.get(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${woeid}`);
   return dispatch => {
     dispatch({ type: FETCHING_WEATHERS }); // first state of 'fetching' is dispatched
     promise
       .then(response => {
-      //    console.log('weatherAction: then', response.data)
+         console.log('weatherAction: then', response.data)
         dispatch({ type: WEATHER_FETCH_SUCCESS, payload: response.data }); // 2nd state of success is dispatched IF the promise resolves
       })
       .catch(err => {
