@@ -16,16 +16,24 @@ In this project you'll choose an api to consume. You will build an application f
 
 ## Project Set Up
 
-- [ ] Create a forked copy of this project.
-- [ ] Add your team lead as collaborator on Github.
-- [ ] Clone your OWN version of the repository in your terminal.
-- [ ] CD into the project base directory `cd React-Redux-App`.
-- [ ] Run `npx create-react-app app --use-npm` to make a CRA app.
-- [ ] CD into the react app `cd app`.
-- [ ] Start up the app using `npm start`.
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-- [ ] Push commits: git push origin `<firstName-lastName>`.
+- [x] Create a forked copy of this project.
+- [x] Add your team lead as collaborator on Github.
+- [x] Clone your OWN version of the repository in your terminal.
+- [x] CD into the project base directory `cd React-Redux-App`.
+- [x] Run `npx create-react-app weather --use-npm` to make a CRA app.
+- [x] CD into the react app `cd weather`.
+# Install dependencies
+- [x] Run `npm i node-sass --save` to enable scss.
+- [x] run `npm i redux` for redux
+- [x] run `npm i react-redux` for react redux
+- [x] run `npm i axios` for axios to access api
+- [x] run `npm i redux-thunk` for thunk middleware
+- [x] run `npm i redux-logger` for redux logger to log state to console
+- [x] run `npm i styled-components` for styled-components
+- [x] Start up the app using `npm start`.
+- [x] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [x] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+- [x] Push commits: git push origin `<firstName-lastName>`.
 
 Follow these steps for completing your project.
 
@@ -45,6 +53,8 @@ Follow these steps for completing your project.
 ## Directions
 
 This is the chance to let your skills shine! You have learned _sooo_ much the last month, and now you get to put all of your hard-earned skills to work. Choose an open api ([this list](https://github.com/public-apis/public-apis) has a lot of great ones - look for ones with `Auth: no` and `HTTPS: yes` - or just do a google search for `open apis`). Protip - don't take too long choosing an API. Pick one that looks interesting, and get building.
+
+https://www.metaweather.com/api/
 
 Once you have chosen an API to consume, build an app that makes sense for the data you will be retrieving. Have fun with this. You get to be the creative mind. You get to make all the decisions here. I'm excited to see what you build!
 

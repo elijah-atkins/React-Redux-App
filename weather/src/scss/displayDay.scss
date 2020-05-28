@@ -1,0 +1,85 @@
+.display-location {
+    display: flex;
+    justify-content: space-between;
+    h1{
+        font-size:3rem;
+    }
+    p{
+        font-size: 1.6rem;
+    }
+}
+.weather-day {
+    display: grid;
+    grid-template-areas: 
+     "icon temp"
+     "main date";
+}
+
+.weather-date {
+    grid-area: date;
+    .month {
+        background-color: darken($bg-color, 5%);
+        font-size: 3rem;
+        h1{
+            padding: .5rem 0 .5rem;
+        }
+    }
+    .day {
+        font-size: 4.2rem;
+    }
+}
+.weather-icon {
+    grid-area: icon;
+    .weather-state-name{
+
+        background-color: darken($bg-color, 5%);
+        text-transform: uppercase;
+        p{
+            padding: 1rem 0 1rem;
+        }
+    }
+}
+.weather-temp-holder{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.weather-temp {
+    grid-area: temp;
+    display: flex;
+    padding: 1rem;
+
+    h1{ 
+        font-size: 10rem;
+    }
+    p{
+        padding-top: .5rem;
+        padding-left: .5rem;
+        font-size: 3.2rem;
+    }
+}
+.weather-main {
+    display: flex;
+    grid-area: main;
+    .weather-wind-dir {
+        display:flex;
+        padding: 1rem;
+        h1{
+            font-size: 5.2rem;
+        }
+        h2 {
+            font-size: 2.5rem;
+        }
+        p{
+            font-size: 2.5rem;
+        }
+    }
+}
+.weather-low-high-big {
+    display:flex;
+    h1{
+        font-size: 4.6rem;
+        padding: 1rem;
+    }
+}
