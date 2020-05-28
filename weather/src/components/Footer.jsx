@@ -6,7 +6,8 @@ const Footer = () => {
 
     return(
     <footer className="footer">
-        <p>Copyright Elijah Atkins {year}</p>
+        <p>Weather Data Provided by <a href="https://www.metaweather.com/api/">MetaWeather</a></p>
+        <p>Designed and Coded Elijah Atkins {year}</p>
     </footer>
     )
     

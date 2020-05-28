@@ -27,8 +27,8 @@ const DisplayWeather = (props) => {
   }
   return (
     <div className="display-weather">
-      <div className="location">
-        <h1>{props.title}</h1>
+      <div className="display-location">
+        <div className="location"><h1>{props.title}</h1></div>
         <div className="sunset-sunrise">
           <p>Sunrise: {formatTime(sunRise)}</p>
           <p>Sunset: {formatTime(sunSet)}</p>
