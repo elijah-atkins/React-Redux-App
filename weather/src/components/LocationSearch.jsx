@@ -1,17 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { fetchLocation } from '../store/actions/locationAction';
 
 
 const LocationSearch = (props) =>{
-  const handleChanges = e => {
-    this.props.search(e.target.value)
+  const [search, setSearch] = useState('')
+  const updateInput = e => {
+    e.preventDefault();
+    setSearch([e.target.name]= e.target.value)
  };
 
 
   const handleSubmit = e => {
     e.preventDefault();
-    this.props.search(this.state.input);
+
+    props.fetchLocation(search);
 
   };
     const getLocation = props.fetchLocation;
@@ -26,8 +29,8 @@ const LocationSearch = (props) =>{
             type="text"f
             name="newLocation"
             placeholder="Enter A Location"
-            value={props.search}
-            onChange={e => handleChanges(e.target.value)}
+            value={search}
+            onChange={e => updateInput(e)}
           />
           <button
             onClick={handleSubmit}
@@ -44,7 +47,6 @@ const mapStateToProps = state => {
   return {
     search: state.location.search,
     woeid: state.location.woeid
-
   }
 }
 

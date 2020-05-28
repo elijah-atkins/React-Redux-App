@@ -49,7 +49,7 @@ export const weatherReducer = (state = initialState, action) => {
     case FETCHING_WEATHERS:
       return { 
         ...state,  
-        fetchingWeather: false }; // if we're fetching simply trigger the boolean!
+        fetchingWeather: true }; // if we're fetching simply trigger the boolean!
     case WEATHER_FETCH_SUCCESS:
       return {
         ...state,

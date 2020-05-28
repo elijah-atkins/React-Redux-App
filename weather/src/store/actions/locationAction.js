@@ -5,14 +5,15 @@ export const LOCATION_FETCH_SUCCESS = "LOCATION_FETCH_SUCCESS";
 export const LOCATION_FETCH_ERROR = "LOCATION_FETCH_ERROR";
 // Those three types above are all a representation of our State Machine
 // fetching, resolve, reject... etc. : ) Start to notice this pattern. You'll use it constantly in redux!
-const query = "Colorado Springs";
-export const fetchLocation = () => {
+
+export const fetchLocation = (query) => {
   const promise = axios.get(`https://www.metaweather.com/api/location/search/?query=${query}`);
   return dispatch => {
     dispatch({ type: FETCHING_LOCATION }); // first state of 'fetching' is dispatched
     promise
       .then(response => {
-        dispatch({ type: LOCATION_FETCH_SUCCESS, payload: response.data.message }); // 2nd state of success is dispatched IF the promise resolves
+
+        dispatch({ type: LOCATION_FETCH_SUCCESS, payload: response.data[0] }); // 2nd state of success is dispatched IF the promise resolves
       })
       .catch(err => {
         console.log(err);

@@ -1,7 +1,7 @@
 import { FETCHING_LOCATION, LOCATION_FETCH_SUCCESS, LOCATION_FETCH_ERROR } from "../actions/locationAction";
 
 const initialState = { 
-  woeid: "2459115", 
+  woeid: "", 
   search: "",
   fetchingLocation: false, 
   error: "" };
@@ -13,10 +13,12 @@ export const locationReducer = (state = initialState, action) => {
         ...state, 
         fetchingLocation: true }; // if we're fetching simply trigger the boolean!
     case LOCATION_FETCH_SUCCESS:
+      console.log('locationReducer Fetch Succesful',action.payload)
       return {
         ...state,
         ...action.payload, // if our promise was successfull, build out the dogs array.
-        fetchingLocation: false // also, set our boolean to false, because we're no longer fetching
+        fetchingLocation: false, // also, set our boolean to false, because we're no longer fetching
+        error: ''
       };
     case LOCATION_FETCH_ERROR:
       return {
