@@ -5,6 +5,7 @@ import React from 'react';
 import LocationSearch from './components/LocationSearch';
 import DisplayWeather from './components/DisplayWeather';
 
+
 function App() {
   return (
     <div className="App">
@@ -12,6 +13,7 @@ function App() {
 
         <LocationSearch />
         <DisplayWeather />
+
       </header>
     </div>
   );

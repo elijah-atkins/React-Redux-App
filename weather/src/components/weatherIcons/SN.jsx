@@ -41,7 +41,7 @@ const SN = styled(SVGsn)`
     display:block;
     margin:auto;
     .sn-flake{
-        animation: ${snowfall} infinite 5000ms linear;
+        animation: ${snowfall} infinite 6000ms cubic-bezier(0.42,0,0.58,1);
     }
 `
 

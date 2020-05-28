@@ -13,15 +13,15 @@ const fall = keyframes`
 const HR = styled(SVGhr)`
     display:block;
     margin:auto;
-    color: #36d;
+    .hr-raindrop{
+      color: #36d;
+    }
     .hr-rain{
+
         animation: ${fall} infinite 600ms linear;
     }
     .hr-cloud{
       color: #ddd;
-      &:hover{
-        color: #fff;
-      }
     }
 `
 
