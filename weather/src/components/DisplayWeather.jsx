@@ -30,8 +30,8 @@ const DisplayWeather = (props) => {
       <div className="display-location">
         <div className="location"><h1>{props.title}</h1></div>
         <div className="sunset-sunrise">
-          <p>Sunrise: {formatTime(sunRise)}</p>
-          <p>Sunset: {formatTime(sunSet)}</p>
+          <p>Dawn: {formatTime(sunRise)}</p>
+          <p>Dusk: {formatTime(sunSet)}</p>
         </div>
       </div>
      <DisplayDay weather={props.consolidated_weather[0]} key={props.consolidated_weather[0].id} />
