@@ -10,7 +10,7 @@ const initialState = {
     {
       id: 6126943885852672,
       weather_state_name: "Light Rain",
-      weather_state_abbr: "lr",
+      weather_state_abbr: "sn",
       wind_direction_compass: "NE",
       created: "2020-05-27T00:53:37.471109Z",
       applicable_date: "2020-05-26",

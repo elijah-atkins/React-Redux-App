@@ -10,7 +10,7 @@ import "./scss/index.scss";
 import App from "./App";
 
 //create store with reducer
-const store = createStore(rootReducer, applyMiddleware(thunk));
+const store = createStore(rootReducer, applyMiddleware(thunk, logger));
 
 ReactDOM.render(
   //wrap app with Provider tag

@@ -4,6 +4,7 @@ import { fetchLocation } from '../store/actions/locationAction';
 
 
 const LocationSearch = (props) =>{
+   const getLocation = props.fetchLocation;
   const [search, setSearch] = useState('')
   const updateInput = e => {
     e.preventDefault();
@@ -13,11 +14,11 @@ const LocationSearch = (props) =>{
 
   const handleSubmit = e => {
     e.preventDefault();
-
-    props.fetchLocation(search);
+    getLocation(search);
+    setSearch('');
 
   };
-    const getLocation = props.fetchLocation;
+
     useEffect(()=> {
       getLocation();
     },[getLocation]);

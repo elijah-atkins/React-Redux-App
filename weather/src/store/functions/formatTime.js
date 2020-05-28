@@ -1,6 +1,5 @@
 export const formatTime = (date) =>{
     const dateStr = new Date(date).toLocaleTimeString('en-US');
-    console.log(dateStr)
     return `${dateStr.slice(0, dateStr.length-6)}  ${dateStr.slice(dateStr.length-2)}`;
 };
 

@@ -14,7 +14,7 @@ export const DisplayDay = ({ weather }) => {
           <p>{weather.weather_state_name}</p>
         </div>
         <div className="weather-img">
-          <GetWeatherIcon abbr={weather.weather_state_abbr} />
+          <GetWeatherIcon abbr={weather.weather_state_abbr} key={weather.id}/>
         </div>
         <div className="weather-wind">
         <p>Wind</p>
