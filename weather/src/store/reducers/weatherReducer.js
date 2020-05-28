@@ -47,7 +47,9 @@ const initialState = {
 export const weatherReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCHING_WEATHERS:
-      return Object.assign({}, state, { fetchingWeather: false }); // if we're fetching simply trigger the boolean!
+      return { 
+        ...state,  
+        fetchingWeather: false }; // if we're fetching simply trigger the boolean!
     case WEATHER_FETCH_SUCCESS:
       return {
         ...state,
@@ -56,10 +58,11 @@ export const weatherReducer = (state = initialState, action) => {
         error: ''
       };
     case WEATHER_FETCH_ERROR:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         fetchingWeathers: false, // we're also no longer fetching here so set the boolean to false
         error: "Error fetching Weather", // now we're getting an error back, set the error as we'd see fit
-      });
+      };
     default:
       return state;
   }

@@ -4,24 +4,33 @@ import { fetchLocation } from '../store/actions/locationAction';
 
 
 const LocationSearch = (props) =>{
+  const handleChanges = e => {
+    this.props.search(e.target.value)
+ };
+
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    this.props.search(this.state.input);
+
+  };
+    const getLocation = props.fetchLocation;
     useEffect(()=> {
-      props.fetchLocation();
-    },[]);
+      getLocation();
+    },[getLocation]);
     return(
         <div className="location-search-form">
             <form>
             <input
             className="location-input"
-            type="text"
+            type="text"f
             name="newLocation"
             placeholder="Enter A Location"
             value={props.search}
-            onChange={()=> {}}
+            onChange={e => handleChanges(e.target.value)}
           />
           <button
-            onClick={() => {
-
-            }}
+            onClick={handleSubmit}
           >
             Get Weather
           </button>

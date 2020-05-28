@@ -8,10 +8,11 @@ import { fetchWeather } from "../store/actions/weatherAction";
 const DisplayWeather = (props) => {
   //console.log('DisplayWeather', props)
     const getWeather = props.fetchWeather;
+    const woeid = props.woeid;
   useEffect(() => {
     //call an action creator
-    getWeather(props.woeid);
-  }, [getWeather]);
+    getWeather(woeid);
+  }, [getWeather, woeid]);
 
   const sunRise = new Date(props.sun_rise);
   const sunSet = new Date(props.sun_set);
@@ -42,12 +43,13 @@ const DisplayWeather = (props) => {
 const mapStateToProps = (state) => {
 
   return {
+    woeid: state.location.woeid,
+    
     sun_rise: state.weather.sun_rise,
     sun_set: state.weather.sun_set,
     title: state.weather.title,
     consolidated_weather: [...state.weather.consolidated_weather],
     fetchingWeather: state.weather.fetchingWeather,
-    woeid: state.weather.woeid,
     error: state.weather.error,
   };
 };

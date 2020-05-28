@@ -1,7 +1,7 @@
 import { FETCHING_LOCATION, LOCATION_FETCH_SUCCESS, LOCATION_FETCH_ERROR } from "../actions/locationAction";
 
 const initialState = { 
-  woeid: "2383489", 
+  woeid: "2459115", 
   search: "",
   fetchingLocation: false, 
   error: "" };
@@ -9,17 +9,21 @@ const initialState = {
 export const locationReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCHING_LOCATION:
-      return Object.assign({}, state, { fetchingLocation: true }); // if we're fetching simply trigger the boolean!
+      return {
+        ...state, 
+        fetchingLocation: true }; // if we're fetching simply trigger the boolean!
     case LOCATION_FETCH_SUCCESS:
-      return Object.assign({}, state, {
-        woeid: action.payload, // if our promise was successfull, build out the dogs array.
+      return {
+        ...state,
+        ...action.payload, // if our promise was successfull, build out the dogs array.
         fetchingLocation: false // also, set our boolean to false, because we're no longer fetching
-      });
+      };
     case LOCATION_FETCH_ERROR:
-      return Object.assign({}, state, {
+      return {
+        ...state, 
         fetchingLocation: false, // we're also no longer fetching here so set the boolean to false
         error: "Error fetching Location" // now we're getting an error back, set the error as we'd see fit
-      });
+      };
     default:
       return state;
   }
