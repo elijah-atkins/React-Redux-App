@@ -29,6 +29,7 @@ In this project you'll choose an api to consume. You will build an application f
 - [x] run `npm i axios` for axios to access api
 - [x] run `npm i redux-thunk` for thunk middleware
 - [x] run `npm i redux-logger` for redux logger to log state to console
+- [x] run `npm i styled-components` for styled-components
 - [x] Start up the app using `npm start`.
 - [x] Create a new branch: git checkout -b `<firstName-lastName>`.
 - [x] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.

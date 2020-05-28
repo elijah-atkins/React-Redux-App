@@ -17,7 +17,7 @@ export const fetchLocation = (query) => {
       })
       .catch(err => {
         console.log(err);
-        dispatch({ type: LOCATION_FETCH_ERROR }); // our other 2nd state of 'rejected' will be dispatched here.
+        dispatch({ type: LOCATION_FETCH_ERROR }); // our other d2nd state of 'rejected' will be dispatched here.
       });
   };
 };
