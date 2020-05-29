@@ -12,13 +12,13 @@ export const DisplayDay = ({ weather }) => {
         <div className="day"><h2>{returnDate(weather.applicable_date)}</h2></div>
       </div>
       <div className="weather-icon">
-        <div className="weather-state-name">
-          <p>{weather.weather_state_name}</p>
-        </div>
+
         <div className="weather-img">
           <GetWeatherIcon abbr={weather.weather_state_abbr} key={weather.id}/>
         </div>
-
+        <div className="weather-state-name">
+          <p>{weather.weather_state_name}</p>
+        </div>
       </div>
 
     <div className="weather-temp-holder">

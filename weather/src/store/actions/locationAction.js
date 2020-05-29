@@ -7,9 +7,9 @@ export const LOCATION_FETCH_ERROR = "LOCATION_FETCH_ERROR";
 // fetching, resolve, reject... etc. : ) Start to notice this pattern. You'll use it constantly in redux!
 
 export const fetchLocation = (query) => {
-
+//https://cors-anywhere.herokuapp.com/
     const promise = axios.get(
-      `https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?query=${query}`
+      `https://www.metaweather.com/api/location/search/?query=${query}`
     );
     return (dispatch) => {
       dispatch({ type: FETCHING_LOCATION }); // first state of 'fetching' is dispatched

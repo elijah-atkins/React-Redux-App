@@ -2,11 +2,12 @@
     max-height: 100vh;
     max-width: 100%;
 }
+
 .display-location {
     display: flex;
     justify-content: space-between;
     h1{
-        font-size:3rem;
+        font-size: clamp(1.6rem, 12vw, 8rem);
     }
     p{
         font-size: 1.6rem;
@@ -34,6 +35,10 @@
 }
 .weather-icon {
     grid-area: icon;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
     .weather-state-name{
 
         background-color: darken($bg-color, 5%);
@@ -55,7 +60,7 @@
     padding: 1rem;
 
     h1{ 
-        font-size: clamp(4rem, 20vw, 10rem);
+        font-size: clamp(4rem, 20vw, 20rem);
     }
     p{
         padding-top: .5rem;
@@ -83,7 +88,7 @@
 .weather-low-high-big {
     display:flex;
     h1{
-        font-size: clamp(1.6rem, 12vw, 3.5rem);
+        font-size: clamp(1.6rem, 10vw, 10rem);
         padding: 1rem;
     }
 }

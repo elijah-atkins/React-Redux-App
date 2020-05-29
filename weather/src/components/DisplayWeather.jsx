@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import DisplayDay from "./DisplayDay";
 import DisplayFiveDay from './DisplayFiveDay';
 import Footer from './Footer';
-import { formatTime } from "../store/functions/formatTime";
 import { fetchWeather } from "../store/actions/weatherAction";
 
 const DisplayWeather = (props) => {
@@ -18,8 +17,6 @@ const DisplayWeather = (props) => {
 
   }, [getWeather, woeid]);
 
-  const sunRise = new Date(props.sun_rise);
-  const sunSet = new Date(props.sun_set);
   if (!props.woeid) {
     return <div></div>;
   }else if (props.fetchingWeather) {
@@ -28,11 +25,8 @@ const DisplayWeather = (props) => {
   return (
     <div className="display-weather">
       <div className="display-location">
-        <div className="location"><h1>{props.title}</h1></div>
-        <div className="sunset-sunrise">
-          <p>Dawn: {formatTime(sunRise)}</p>
-          <p>Dusk: {formatTime(sunSet)}</p>
-        </div>
+<h1>{props.title}</h1>
+
       </div>
      <DisplayDay weather={props.consolidated_weather[0]} key={props.consolidated_weather[0].id} />
 
