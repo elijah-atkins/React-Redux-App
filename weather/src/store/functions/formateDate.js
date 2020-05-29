@@ -1,4 +1,5 @@
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+const weekdays =['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 
 const getDate = (num) => {
     if (num % 10 === 1 && num !== 11) {
@@ -18,4 +19,9 @@ export const returnDate = (str='') =>{
 export const returnMonth = (str='') =>{
     const dateArr = str.split('-').map(Number);
     return months[dateArr[1]-1]
+}
+
+export const returnWeekday = (str='') =>{
+    const date = new Date(str);
+    return weekdays[date.getDay()]
 }

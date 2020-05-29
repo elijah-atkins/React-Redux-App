@@ -2,7 +2,6 @@ import React from 'react';
 //import actions
 
 //import components
-import LocationSearch from './components/LocationSearch';
 import DisplayWeather from './components/DisplayWeather';
 
 
@@ -11,7 +10,7 @@ function App() {
     <div className="App">
       <header className="App-header">
 
-        <LocationSearch />
+
         <DisplayWeather />
 
       </header>

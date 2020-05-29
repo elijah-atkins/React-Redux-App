@@ -12,7 +12,7 @@ export const fetchWeather = (woeid) => {
     dispatch({ type: FETCHING_WEATHERS }); // first state of 'fetching' is dispatched
     promise
       .then(response => {
-      //    console.log('weatherAction: then', response.data)
+         console.log('weatherAction: then', response.data)
         dispatch({ type: WEATHER_FETCH_SUCCESS, payload: response.data }); // 2nd state of success is dispatched IF the promise resolves
       })
       .catch(err => {

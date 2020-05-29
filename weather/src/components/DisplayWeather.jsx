@@ -2,42 +2,48 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import DisplayDay from "./DisplayDay";
 import DisplayFiveDay from './DisplayFiveDay';
+import LocationSearch from './LocationSearch';
 import Footer from './Footer';
-import { formatTime } from "../store/functions/formatTime";
 import { fetchWeather } from "../store/actions/weatherAction";
+import { toggleEditing } from '../store/actions/locationAction';
+
+
 
 const DisplayWeather = (props) => {
   //console.log('DisplayWeather', props)
     const getWeather = props.fetchWeather;
     const woeid = props.woeid;
+    const toggleEditing = props.toggleEditing;
+
+
   useEffect(() => {
     //call an action creator
     if(woeid){
       getWeather(woeid);
+      toggleEditing();
     }
 
-  }, [getWeather, woeid]);
+  }, [getWeather, woeid, toggleEditing]);
 
-  const sunRise = new Date(props.sun_rise);
-  const sunSet = new Date(props.sun_set);
   if (!props.woeid) {
-    return <div></div>;
+    return <div><LocationSearch /></div>;
   }else if (props.fetchingWeather) {
+
     return <div>Loading</div>;
   }
   return (
     <div className="display-weather">
       <div className="display-location">
-        <div className="location"><h1>{props.title}</h1></div>
-        <div className="sunset-sunrise">
-          <p>Sunrise: {formatTime(sunRise)}</p>
-          <p>Sunset: {formatTime(sunSet)}</p>
-        </div>
+        {props.toggle ? <div className="cancel-location"><button className="cancelButton" onClick={()=>{props.toggleEditing()}}>X</button><LocationSearch /></div> :
+<div className="toggle-search" onClick={()=>{
+props.toggleEditing()
+}}><h1>{props.title}</h1></div>}
+
       </div>
-      {props.consolidated_weather.slice(0, 1).map((day) => {
-        return <DisplayDay weather={day} key={day.id} />;
-      })}
+     <DisplayDay weather={props.consolidated_weather[0]} key={props.consolidated_weather[0].id} />
+
       <div className="five-day">
+
       {props.consolidated_weather.slice(1).map((day) => {
         return <DisplayFiveDay weather={day} key={day.id} />;
       })}
@@ -58,7 +64,9 @@ const mapStateToProps = (state) => {
     consolidated_weather: [...state.weather.consolidated_weather],
     fetchingWeather: state.weather.fetchingWeather,
     error: state.weather.error,
+    toggle: state.location.toggle,
+
   };
 };
 
-export default connect(mapStateToProps, { fetchWeather })(DisplayWeather);
+export default connect(mapStateToProps, { fetchWeather, toggleEditing })(DisplayWeather);
