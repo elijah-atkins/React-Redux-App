@@ -3,9 +3,15 @@ import axios from "axios";
 export const FETCHING_LOCATION = "FETCHING_LOCATIONS";
 export const LOCATION_FETCH_SUCCESS = "LOCATION_FETCH_SUCCESS";
 export const LOCATION_FETCH_ERROR = "LOCATION_FETCH_ERROR";
+export const TOGGLE_EDITING = "TOGGLE_EDITING";
+
 // Those three types above are all a representation of our State Machine
 // fetching, resolve, reject... etc. : ) Start to notice this pattern. You'll use it constantly in redux!
-
+export const toggleEditing = () => {
+  return {
+    type: TOGGLE_EDITING,
+  };
+};
 export const fetchLocation = (query) => {
 //https://cors-anywhere.herokuapp.com/
     const promise = axios.get(

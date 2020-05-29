@@ -1,0 +1,64 @@
+.location-search {
+    height: 4rem;
+    display: flex;
+    flex-direction: column;
+ 
+.searchBox {
+
+    background: $search-bg;
+    height: 4rem;
+    border-radius: 45px;
+    
+
+}
+
+
+.search-error {
+    animation: shake 300ms;
+}
+.searchBox:hover > .searchButton {
+  background: $white;
+  color : $search-bg;
+}
+
+.searchButton {
+    color: $white;
+    float: right;
+    margin-left: -1.2rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: $search-bg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.searchInput {
+    border:none;
+    background: none;
+    outline:none;
+    float:left;
+    margin: .8rem 0 0 1rem;
+    color: $white;
+    font-size: 2rem;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 450px;
+    padding: 0 6px;
+
+}
+.search-svg {
+    position: absolute;
+    transform: scale(.4);
+}
+
+@media screen and (max-width: 620px) {
+.searchInput {
+    width: 350px;
+    padding: 0 6px;
+}
+}
+
+}
