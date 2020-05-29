@@ -2,12 +2,19 @@
     max-height: 100vh;
     max-width: 100%;
 }
-
+.cancel-location{
+    .cancelButton{
+        float: left;
+        border-radius: 50%;
+        border: none;
+    }
+}
 .display-location {
     display: flex;
     justify-content: space-between;
     h1{
         font-size: clamp(1.6rem, 12vw, 8rem);
+        cursor: pointer;
     }
     p{
         font-size: 1.6rem;

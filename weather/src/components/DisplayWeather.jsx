@@ -34,7 +34,7 @@ const DisplayWeather = (props) => {
   return (
     <div className="display-weather">
       <div className="display-location">
-        {props.toggle ? <div><button onClick={()=>{props.toggleEditing()}}>cancel</button><LocationSearch /></div> :
+        {props.toggle ? <div className="cancel-location"><button className="cancelButton" onClick={()=>{props.toggleEditing()}}>X</button><LocationSearch /></div> :
 <div className="toggle-search" onClick={()=>{
 props.toggleEditing()
 }}><h1>{props.title}</h1></div>}

@@ -13,19 +13,19 @@ export const toggleEditing = () => {
   };
 };
 export const fetchLocation = (query) => {
-//https://cors-anywhere.herokuapp.com/
-    const promise = axios.get(
-      `https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?query=${query}`
-    );
-    return (dispatch) => {
-      dispatch({ type: FETCHING_LOCATION }); // first state of 'fetching' is dispatched
-      promise
-        .then((response) => {
-          dispatch({ type: LOCATION_FETCH_SUCCESS, payload: response.data[0] }); // 2nd state of success is dispatched IF the promise resolves
-        })
-        .catch((err) => {
-          console.log(err);
-          dispatch({ type: LOCATION_FETCH_ERROR }); // our other d2nd state of 'rejected' will be dispatched here.
-        });
-    };
+  //https://cors-anywhere.herokuapp.com/
+  const promise = axios.get(
+    `https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?query=${query}`
+  );
+  return (dispatch) => {
+    dispatch({ type: FETCHING_LOCATION }); // first state of 'fetching' is dispatched
+    promise
+      .then((response) => {
+        dispatch({ type: LOCATION_FETCH_SUCCESS, payload: response.data[0] }); // 2nd state of success is dispatched IF the promise resolves
+      })
+      .catch((err) => {
+        console.log(err);
+        dispatch({ type: LOCATION_FETCH_ERROR }); // our other d2nd state of 'rejected' will be dispatched here.
+      });
+  };
 };
