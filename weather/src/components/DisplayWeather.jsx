@@ -27,7 +27,7 @@ const DisplayWeather = (props) => {
 
   if (!props.woeid) {
     return <div><LocationSearch /></div>;
-  }else if (props.fetchingWeather) {
+  }else if (props.fetchingWeather || props.fethingLocation) {
 
     return <div>Loading</div>;
   }
@@ -65,6 +65,7 @@ const mapStateToProps = (state) => {
     fetchingWeather: state.weather.fetchingWeather,
     error: state.weather.error,
     toggle: state.location.toggle,
+    fetchingLocation: state.location.fetchingLocation,
 
   };
 };
