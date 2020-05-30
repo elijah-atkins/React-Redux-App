@@ -13,6 +13,7 @@ export const toggleEditing = () => {
   };
 };
 export const fetchLocation = (query) => {
+
   //https://cors-anywhere.herokuapp.com/
   const promise = axios.get(
     `https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?query=${query}`
@@ -28,4 +29,5 @@ export const fetchLocation = (query) => {
         dispatch({ type: LOCATION_FETCH_ERROR }); // our other d2nd state of 'rejected' will be dispatched here.
       });
   };
+
 };
