@@ -18,7 +18,7 @@ const S = styled(SVGs)`
   }
   .s-rain {
 
-    animation: ${sFall} infinite 1000ms linear;
+    animation: ${sFall} infinite 700ms linear;
   }
   .s-cloud {
     color: #ddd;
