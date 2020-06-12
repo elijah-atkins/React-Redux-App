@@ -1,6 +1,6 @@
 // Mixins
-@mixin phone-view {
-    @media (max-width: 600px) {
+@mixin large-view {
+    @media (min-width: 1000px) {
         @content; 
     }
 }

@@ -25,6 +25,11 @@
     grid-template-areas: 
      "icon temp"
      "main date";
+     @include large-view{
+         grid-template-areas:
+         "date temp icon main"
+         
+     }
 }
 
 .weather-date {
@@ -67,7 +72,7 @@
     padding: 1rem;
 
     h1{ 
-        font-size: clamp(4rem, 20vw, 20rem);
+        font-size: clamp(4rem, 25vw, 16rem);
     }
     p{
         padding-top: .5rem;
@@ -95,7 +100,7 @@
 .weather-low-high-big {
     display:flex;
     h1{
-        font-size: clamp(1.6rem, 10vw, 10rem);
+        font-size: clamp(1.6rem, 10vw, 9rem);
         padding: 1rem;
     }
 }
