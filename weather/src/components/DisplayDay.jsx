@@ -1,5 +1,5 @@
 import React from "react";
-import { getFehrenheit } from '../store/functions/getFehrenheit';
+import { getFahrenheit } from '../store/functions/getFahrenheit';
 import { returnDate, returnMonth } from '../store/functions/formateDate';
 import GetWeatherIcon from './GetWeatherIcon';
 
@@ -24,18 +24,18 @@ export const DisplayDay = ({ weather }) => {
     <div className="weather-temp-holder">
       <div className="weather-temp">
         <h1>
-          {Math.round(getFehrenheit(weather.the_temp))}
+          {Math.round(getFahrenheit(weather.the_temp))}
           {"\u00b0"}
         </h1>
         <div className="temp-toggle-button"><p>F</p></div>
       </div>
       <div className="weather-low-high-big">
         <h1>
-          {Math.round(getFehrenheit(weather.min_temp))}
+          {Math.round(getFahrenheit(weather.min_temp))}
           {"\u00b0"}
         </h1>
         <h1>
-          {Math.round(getFehrenheit(weather.max_temp))}
+          {Math.round(getFahrenheit(weather.max_temp))}
           {"\u00b0"}
         </h1>
       </div>

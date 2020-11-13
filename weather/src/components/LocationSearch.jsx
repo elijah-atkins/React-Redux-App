@@ -1,14 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { fetchLocation } from "../store/actions/locationAction";
+import validLocations from './validLocations';
 
 const LocationSearch = (props) => {
   const getLocation = props.fetchLocation;
-
+  /* STEP 1: Create search and searchResults state
+   - search will save the data from the search input on every occurance of the change event.
+   - searchResults is used to set the search result.
+  */
   const [search, setSearch] = useState(props.search);
+  const [searchResults, setSearchResults] = useState(validLocations.cities);
+  
+    /* STEP 2: create handleChange function and add to input 
+   The handleChange method takes the event object as the argument
+   and sets the current value of the input to the searchTerm state
+   using setSearchTerm
+  */
   const updateInput = (e) => {
-    e.preventDefault();
-    setSearch(([e.target.name] = e.target.value));
+
+    setSearch(e.target.value);
   };
 
   const handleSubmit = (e) => {
@@ -16,10 +27,22 @@ const LocationSearch = (props) => {
     getLocation(search);
   };
 
-  useEffect(() => {
-    getLocation();
-  }, [getLocation]);
+  const handleCities = (value) => {
+    setSearch(value.target.innerHTML);
+  }
 
+
+  useEffect(() => {
+    // map transforms [].length => a new type of data at the same length
+    // find reads an expression and then returns the first value that that expression is true
+    // filter reads an expression and then returns an [] with values where expression was true
+    // reduce
+    const AllLocations = [...validLocations.cities];
+    const newResults = AllLocations.filter(cities => {
+      return cities.toLowerCase().includes(search.toLowerCase());
+    });
+    setSearchResults(newResults.slice(0,4));
+  }, [search]);
   return (
     <div className="location-search">
       <div className="searchBox">
@@ -54,6 +77,16 @@ const LocationSearch = (props) => {
           </svg>
         </button>
       </div>
+      {(searchResults.length > 1)?
+      <div className="city-list">
+        <ul>
+          {/* STEP 3: Map over searchResults to see values in that array */}
+          {searchResults.map(city => {
+            return <li key={city} onClick={ handleCities }>{city}</li>;
+          })}
+        </ul>
+      </div> : null
+}
     </div>
   );
 };
@@ -61,6 +94,7 @@ const LocationSearch = (props) => {
 const mapStateToProps = (state) => {
   return {
     search: state.location.search,
+    searchResults: state.location.searchResults,
     woeid: state.location.woeid,
     toggle: state.location.toggle,
   };

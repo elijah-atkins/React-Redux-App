@@ -1,5 +1,5 @@
 import React from "react";
-import { getFehrenheit } from '../store/functions/getFehrenheit';
+import { getFahrenheit } from '../store/functions/getFahrenheit';
 import { returnWeekday } from '../store/functions/formateDate';
 import GetWeatherIcon from './GetWeatherIcon';
 
@@ -20,11 +20,11 @@ export const DisplayFiveDay = ({ weather }) => {
 
       <div className="weather-low-high">
         <h1>
-          {Math.round(getFehrenheit(weather.min_temp))}
+          {Math.round(getFahrenheit(weather.min_temp))}
           {"\u00b0"}
         </h1>
         <h1>
-          {Math.round(getFehrenheit(weather.max_temp))}
+          {Math.round(getFahrenheit(weather.max_temp))}
           {"\u00b0"}
         </h1>
       </div>
